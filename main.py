@@ -11,12 +11,12 @@ import os,sys
 # ===================================
 # Which stages to run
 # ===================================
-do_add_noise = False
+do_add_noise = True
 do_black_level_correction = True
 do_lens_shading_correction = True
 do_bad_pixel_correction = True
 do_channel_gain_white_balance = True
-do_bayer_denoise = False
+do_bayer_denoise = True
 do_demosaic = True
 do_demosaic_artifact_reduction = True
 do_color_correction = True
@@ -26,7 +26,7 @@ do_tone_mapping = True
 do_memory_color_enhancement = True
 do_noise_reduction = True
 do_sharpening = True
-do_distortion_correction = False
+do_distortion_correction = True
 
 
 # ===================================

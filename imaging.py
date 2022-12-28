@@ -1242,7 +1242,7 @@ class chromatic_aberration_correction:
         temp = (r + g + b) / 3
         temp = np.asarray(temp)
         mask = temp > nsr_threshold
-        nsr = np.zeros((height, width), dtype=np.int)
+        nsr = np.zeros((height, width), dtype=np.int64)
         nsr[mask] = 1
 
         # candidate region detection
@@ -1251,7 +1251,7 @@ class chromatic_aberration_correction:
         temp = np.asarray(temp)
         temp1 = np.asarray(temp1)
         mask = (temp < cr_threshold) & (temp1 > cr_threshold)
-        cr = np.zeros((height, width), dtype=np.int)
+        cr = np.zeros((height, width), dtype=np.int64)
         cr[mask] = 1
 
         # quantization

@@ -94,7 +94,8 @@ def imsave(data, output_name, output_dtype="uint8", input_dtype="uint8", is_scal
             if (np.ndim(data) == 3):
                 # create the png writer
                 writer = png.Writer(width=data.shape[1], height=data.shape[0],\
-                                    bitdepth = output_bitdepth)
+                                    bitdepth = output_bitdepth, \
+                                    greyscale=False)
                 # convert data to the python lists expected by the png Writer
                 data2list = data.reshape(-1, data.shape[1]*data.shape[2]).tolist()
                 # write in the file
@@ -774,7 +775,7 @@ class create_filter:
 
         if (kernel_size > 3):
 
-            n = np.int(np.floor((kernel_size - 5) / 2 + 1))
+            n = np.int64(np.floor((kernel_size - 5) / 2 + 1))
 
             for i in range(0, n):
 
@@ -1056,7 +1057,7 @@ class edge_detection:
         threshold = threshold * clip_range[1]
 
         # calculating if the edge is a strong edge
-        is_edge = np.zeros(np.shape(self.data), dtype=np.int)
+        is_edge = np.zeros(np.shape(self.data), dtype=np.int64)
         mask = G > threshold
         is_edge[mask] = 1
 
