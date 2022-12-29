@@ -189,6 +189,9 @@ else:
 
 
 
+print(data)
+print(data.dtype)
+print(data.shape)
 # ===================================
 # Add noise
 # ===================================
