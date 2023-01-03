@@ -287,7 +287,7 @@ class demosaic:
 
     def post_process_local_color_ratio(self, beta):
         # Objective is to reduce high chroma jump
-        # Beta is controlling parameter, higher gives more effect,
+        # Beta is controlling config, higher gives more effect,
         # however, too high does not make any more change
 
         print("----------------------------------------------------")
