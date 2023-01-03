@@ -50,7 +50,7 @@ image_name = "DSC_1339_768x512_rggb"            # image content: Rose rggb
 
 # read the raw image
 temp = np.fromfile("images/" + image_name + ".raw", dtype="uint16", sep="")
-
+print(temp.shape)
 
 if (image_name == "DSC_1339_768x512_rggb"):
 
@@ -188,10 +188,6 @@ else:
     print("Warning! image_name not recognized.")
 
 
-
-print(data)
-print(data.dtype)
-print(data.shape)
 # ===================================
 # Add noise
 # ===================================
