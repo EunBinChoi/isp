@@ -7,13 +7,10 @@
 import numpy as np  # array operations
 import math         # basing math operations
 from matplotlib import pylab as plt
-import time         # measure runtime
 import utility
 import debayer
 import sys          # float precision
 from scipy import signal        # convolutions
-from scipy import interpolate   # for interpolation
-
 
 
 # =============================================================

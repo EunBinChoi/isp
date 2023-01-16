@@ -2,11 +2,9 @@
 # Import the libraries
 # ===================================
 import numpy as np
-from matplotlib import pylab as plt
 import imaging
 import utility
-import os,sys
-
+import os
 
 # ===================================
 # Which stages to run
@@ -207,8 +205,8 @@ else:
 # ===================================
 if do_black_level_correction:
     data = imaging.black_level_correction(data, \
-                                          raw.get_black_level(),\
-                                          raw.get_white_level(),\
+                                          raw.get_black_level(), \
+                                          raw.get_white_level(), \
                                           [0, 2**raw.get_bit_depth() - 1])
     utility.imsave(data, "images/" + image_name + "_out_black_level_correction.png", "uint16")
 else:
@@ -252,7 +250,7 @@ else:
 # Channel gain for white balance
 # ===================================
 if do_channel_gain_white_balance:
-    data = imaging.channel_gain_white_balance(data,\
+    data = imaging.channel_gain_white_balance(data, \
                                               raw.get_channel_gain())
     utility.imsave(data, "images/" + image_name + "_out_channel_gain_white_balance.png", "uint16")
 else:
@@ -395,12 +393,12 @@ if do_memory_color_enhancement:
     chroma_sigma = [10., 10., 5.]
 
 
-    data = imaging.memory_color_enhancement(data).by_hue_squeeze(target_hue,\
-                                                                 hue_preference,\
-                                                                 hue_sigma,\
-                                                                 is_both_side,\
-                                                                 multiplier,\
-                                                                 chroma_preference,\
+    data = imaging.memory_color_enhancement(data).by_hue_squeeze(target_hue, \
+                                                                 hue_preference, \
+                                                                 hue_sigma, \
+                                                                 is_both_side, \
+                                                                 multiplier, \
+                                                                 chroma_preference, \
                                                                  chroma_sigma)
 
     utility.imsave(data, "images/" + image_name + "_out_memory_color_enhancement.png", "uint16")
